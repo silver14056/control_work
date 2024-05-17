@@ -22,9 +22,25 @@ string[] GenerateArray(int size)
 
     for (int i = 0; i < size; ++i)
     {
-        tempArray[i] = "string element";
+        tempArray[i] = GenerateString(5);
     }
     return tempArray;
+}
+
+string GenerateString(int maxSize)
+{
+    Random rand = new Random();
+    string str = "";
+    int strLength = rand.Next(0, maxSize + 1);
+    char symbol;
+    for (int i = 0; i < strLength; i++)
+    {
+        symbol = (char)rand.Next(32, 126);
+        str += symbol;
+    }
+    return str;
+
+
 }
 
 Main();
