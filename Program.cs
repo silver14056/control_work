@@ -3,6 +3,7 @@
     int arraySize = ReadInt("Введите размер массива: ");
     string[] array = GenerateArray(arraySize);
     PrintArray(array);
+    PrintArray(filterString(array));
 }
 
 int ReadInt(string msg)
@@ -41,6 +42,31 @@ string GenerateString(int maxSize)
     return str;
 
 
+}
+
+string[] filterString(string[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            count++;
+        }
+
+    }
+
+    string[] temArray = new string[count];
+    int count2 = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            temArray[count2] = array[i];
+            count2++;
+        }
+    }
+    return temArray;
 }
 
 Main();
