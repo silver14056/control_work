@@ -46,17 +46,7 @@ string GenerateString(int maxSize)
 
 string[] filterString(string[] array)
 {
-    int count = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i].Length <= 3)
-        {
-            count++;
-        }
-
-    }
-
-    string[] temArray = new string[count];
+    string[] temArray = new string[counting(array)];
     int count2 = 0;
     for (int i = 0; i < array.Length; i++)
     {
@@ -67,6 +57,20 @@ string[] filterString(string[] array)
         }
     }
     return temArray;
+}
+
+int counting(string[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            count++;
+        }
+
+    }
+    return count;
 }
 
 Main();
