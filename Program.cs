@@ -10,9 +10,10 @@ int ReadInt(string msg)
     return Convert.ToInt32(Console.ReadLine());
 }
 
+
 string[] GenerateArray(int size)
 {
-    int[] tempArray = new int[size];
+    string[] tempArray = new string[size];
     
     for (int i = 0; i < size; ++i)
     {
