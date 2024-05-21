@@ -4,13 +4,13 @@
     int arraySize = ReadInt("Введите размер массива: ");
     // Генерируем массив
     string[] array = GenerateArray(arraySize);
-    // Выводим сгенерированый массив в консоль
+    // Выводим сгенерированный массив в консоль
     PrintArray(array);
-    // Выводим в консоль отфильтрованый массив
+    // Выводим в консоль отфильтрованный массив
     PrintArray(filterString(array));
 }
 
-//Запришиваем у пользователя и получаем из консоли размер массива
+//Запрашиваем у пользователя и получаем из консоли размер массива
 int ReadInt(string msg)
 {
     Console.Write(msg);
@@ -57,19 +57,19 @@ string GenerateString(int maxSize)
 string[] filterString(string[] array)
 {
     // Создаем новый массив, размер котороого равен колличеству элеметов отвечающих условию задачи
-    string[] temArray = new string[counting(array)];
+    string[] tempArray = new string[counting(array)];
 
     // Переносим необходимые элементы в новый массив
-    int count2 = 0;
+    int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
         {
-            temArray[count2] = array[i];
-            count2++;
+            tempArray[count] = array[i];
+            count++;
         }
     }
-    return temArray;
+    return tempArray;
 }
 
 // Подсчёт элементов отвечающих условию задачи
